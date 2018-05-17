@@ -6,8 +6,8 @@ import GameLog from "../components/GameLog";
 class Game extends React.Component {
     render () {
         return (<div id="Game">
-            <GameLog />
             <Prompt placeholder="What do you want to do?"/>
+            <GameLog />
         </div>);
     }
 }
