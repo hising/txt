@@ -1,21 +1,19 @@
 import React, { Component } from 'react';
+import { BrowserRouter, Route, Link } from 'react-router-dom';
 import './App.css';
+import { Splash, Game} from './views';
 
 class App extends Component {
   render() {
     return (
-      <div className="App">
-          <h1>Wanna play?</h1>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam, asperiores at, blanditiis debitis delectus deleniti, ducimus ea esse explicabo hic itaque mollitia neque nesciunt perspiciatis quaerat quam quas quia voluptatem?</p>
-          <a href="#play" onClick={this.launchGame.bind(this)}>Yes</a>
-      </div>
+      <BrowserRouter>
+          <div className="App">
+              <Route exact path="/" component={Splash} />
+              <Route path="/game" component={Game}/>
+          </div>
+      </BrowserRouter>
     );
   }
-
-    launchGame(event) {
-        event.preventDefault();
-        alert('launchGame');
-    }
 }
 
 export default App;
