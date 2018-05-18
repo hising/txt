@@ -23,4 +23,41 @@
     padding: 12px 0;
     font-style: normal;
   }
+
+  &.active {
+    i {
+      color: #86f3bc;
+      animation-name: blink;
+      animation-duration: 1800ms;
+      animation-iteration-count: infinite;
+      opacity: 1;
+    }
+  }
+}
+
+@keyframes blink {
+  0%
+  {
+    transform: scale( .75 );
+  }
+  20%
+  {
+    transform: scale( 1 );
+  }
+  40%
+  {
+    transform: scale( .75 );
+  }
+  60%
+  {
+    transform: scale( 1 );
+  }
+  80%
+  {
+    transform: scale( .75 );
+  }
+  100%
+  {
+    transform: scale( .75 );
+  }
 }

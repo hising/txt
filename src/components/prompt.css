@@ -20,3 +20,23 @@
     font-size: 21px;
     padding: 12px 0;
     font-style: normal; }
+  .prompt.active i {
+    color: #86f3bc;
+    animation-name: blink;
+    animation-duration: 1800ms;
+    animation-iteration-count: infinite;
+    opacity: 1; }
+
+@keyframes blink {
+  0% {
+    transform: scale(0.75); }
+  20% {
+    transform: scale(1); }
+  40% {
+    transform: scale(0.75); }
+  60% {
+    transform: scale(1); }
+  80% {
+    transform: scale(0.75); }
+  100% {
+    transform: scale(0.75); } }

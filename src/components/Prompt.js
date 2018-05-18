@@ -1,24 +1,33 @@
 import React from 'react';
 import './prompt.css';
+import classNames from 'classnames';
 
 class Prompt extends React.Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            message: ''
+            message: '',
+            active: false
         };
         this._handleKeyPress = this._handleKeyPress.bind(this);
         this.handleMessage = this.handleMessage.bind(this);
+        this.onBlur = this.onBlur.bind(this);
+        this.onFocus = this.onFocus.bind(this);
     }
 
     render() {
-        return (<div className="prompt">
+        let promptClasses = classNames('prompt', {
+            'active': this.state.active
+        });
+        return (<div className={promptClasses}>
             <input type="text"
                    placeholder={this.props.placeholder}
                    value={this.state.message}
                    onChange={this.handleMessage}
                    onKeyPress={this._handleKeyPress}
+                   onFocus={this.onFocus}
+                   onBlur={this.onBlur}
             />
             <i>
                 >
@@ -40,6 +49,18 @@ class Prompt extends React.Component {
     handleMessage(event) {
         this.setState({
             message: event.target.value
+        });
+    }
+
+    onFocus() {
+        this.setState({
+            active: true
+        });
+    }
+
+    onBlur() {
+        this.setState({
+            active: false
         });
     }
 }
