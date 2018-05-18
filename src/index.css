@@ -1,18 +1,23 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
   margin: 0;
-  padding: 0;
-  font-size: 32px;
+  padding: 12px;
+  font-size: 22px;
   line-height: 1.1;
-  font-weight: 100;
+  font-weight: normal;
   background: #333;
-  font-family: 'Caveat', cursive;
+  font-family: 'Inconsolata', monospace;
   color: #d8d8d8;
 }
 
 h1, h2, h3, h4, h5, h6 {
   color: #fff;
-  font-size: 32px;
-  font-family: 'Alfa Slab One', cursive;
+  font-weight: 100;
+  text-align: center;
+  font-family: 'Playfair Display', serif;
 }
 
 a {
