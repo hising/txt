@@ -1,3 +1,10 @@
 .App {
   max-width: 760px;
   margin: 20px auto; }
+
+.header {
+  position: relative; }
+  .header .user-link {
+    position: absolute;
+    right: 12px;
+    top: 12px; }

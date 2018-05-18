@@ -5,3 +5,13 @@
   margin: 20px auto;
   //background-color: $bg_color;
 }
+
+.header {
+  position: relative;
+  .user-link {
+    position: absolute;
+    right: 12px;
+    top: 12px;
+  }
+}
+
