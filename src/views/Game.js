@@ -13,6 +13,11 @@ class Game extends React.Component {
         this.handleMessage = this.handleMessage.bind(this);
     }
 
+    updateScroll(){
+        let element = document.querySelector('.game-log');
+        element.scrollIntoView(false);
+    }
+
     render () {
         return (<div id="Game">
             <GameLog messages={this.state.messages} />
@@ -21,9 +26,23 @@ class Game extends React.Component {
     }
 
     handleMessage(message) {
-        this.setState(prevState => ({
-            messages: [...prevState.messages, message]
-        }));
+        let messageType = {
+            message,
+            type: 'you'
+        };
+        this.setState(prevState => ({messages: [...prevState.messages, messageType]}));
+        setTimeout(this.updateScroll, 100);
+
+        // TODO: Send command to game
+        this.replyToCommand(message);
+    }
+
+    replyToCommand(message) {
+        let messageType = {
+            message: '...',
+            type: 'game'
+        };
+        this.setState(prevState => ({messages: [...prevState.messages, messageType]}));
     }
 }
 

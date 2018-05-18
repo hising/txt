@@ -13,7 +13,7 @@ class GameLog extends React.Component {
     getMessages() {
         let i = 0;
         return this.props.messages.map(message => {
-            return <li key={i++}>{message}</li>
+            return <li key={i++} className={message.type}>{message.message}</li>
         });
     }
 }
